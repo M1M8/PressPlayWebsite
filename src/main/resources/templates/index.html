@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:insert="fragments/header"> </div>
+    <h2> Select and Operations</h2>
+    <a th:href="@{/films}"> View all films </a><br>
+    <a th:href="@{/search-films}"> Search films </a><br>
+    <div th:insert="fragments/footer :: alternate"></div>
+</body>
+</html>
