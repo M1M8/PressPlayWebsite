@@ -6,9 +6,24 @@
 </head>
 <body>
     <div th:insert="fragments/header"> </div>
-    <h2> Select and Operations</h2>
-    <a th:href="@{/films}"> View all films </a><br>
-    <a th:href="@{/search-films}"> Search films </a><br>
-    <div th:insert="fragments/footer :: alternate"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>Film ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Rating</th>
+            <th>Rental Rate</th>
+        </tr>
+        </thead>
+        <tr th:each="film : ${allFilms}">
+            <td th:text="${film.filmId}"></td>
+            <td th:text="${film.title}"></td>
+            <td th:text="${film.description}"></td>
+            <td th:text="${film.rating}"></td>
+            <td th:text="${film.rentalRate}"></td>
+        </tr>
+    </table>
+    <div th:insert="fragments/footer"></div>
 </body>
 </html>
